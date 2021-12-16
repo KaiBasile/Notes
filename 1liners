@@ -11,3 +11,5 @@
 #disk usage analysis with 10 heaviest results
 du -a --max-depth=1 | sort -n | awk 'BEGIN{split("Kb Mb Gb TB",units)}{ u=1; s=$1; while(s > 1024) { u = u + 1; s = s / 1024 }; print s,units[u],$2}' | tail
 
+#create test.html >directory path
+echo "<html> <h1>test page created by kai at $(date) </h1> </html>" > public_html/test.html
