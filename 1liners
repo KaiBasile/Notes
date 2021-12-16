@@ -1,0 +1,13 @@
+#command suffixes
+#print the 3rd, 1st, and 9th fields
+| awk '{print $3,$1,$9}
+
+#print the last field
+| awk '{print $NF}'
+
+#condense and count a list
+| sort | uniq -c | sort -rn
+
+#disk usage analysis with 10 heaviest results
+du -a --max-depth=1 | sort -n | awk 'BEGIN{split("Kb Mb Gb TB",units)}{ u=1; s=$1; while(s > 1024) { u = u + 1; s = s / 1024 }; print s,units[u],$2}' | tail
+
