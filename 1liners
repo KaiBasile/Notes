@@ -23,8 +23,8 @@ dhclient –v
 #Check for open ports
 sudo lsof -i -P -n | grep LISTEN
 
-#create index.php file THIS WILL OVERWRITE index.php
-echo "<?php phpinfo(); ?>" > index.php
+#create info.php file
+echo "<?php phpinfo(); ?>" > info.php
 
 #latest wordpress download and extraction
 wget https://wordpress.org/latest.tar.gz
