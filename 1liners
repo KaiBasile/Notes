@@ -13,3 +13,19 @@ du -a --max-depth=1 | sort -n | awk 'BEGIN{split("Kb Mb Gb TB",units)}{ u=1; s=$
 
 #create test.html >directory path
 echo "<html> <h1>test page created by kai at $(date) </h1> </html>" > public_html/test.html
+
+#review status of apache service on server
+systemctl status apache2.service
+
+#centOS internet connection command
+dhclient –v
+
+#Check for open ports
+sudo lsof -i -P -n | grep LISTEN
+
+#create index.php file THIS WILL OVERWRITE index.php
+echo "<?php phpinfo(); ?>" > index.php
+
+#latest wordpress download and extraction
+wget https://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz
