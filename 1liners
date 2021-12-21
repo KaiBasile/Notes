@@ -29,3 +29,9 @@ echo "<?php phpinfo(); ?>" > info.php
 #latest wordpress download and extraction
 wget https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
+
+#create a file the hard way
+echo "publickey" >> authorized_keys
+
+#Firewall command to open port 80 for centOS
+firewall-cmd --zone=public --add-service=http
