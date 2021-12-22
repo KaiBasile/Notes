@@ -41,3 +41,6 @@ scp -i ~/.ssh/<key> <file> <user>@<IP>:<directory>
 
 Find hostname
 hostname -i
+
+#Install csf on core server
+wget https://download.configserver.com/csf.tgz; tar -xf csf.tgz; pushd csf; ./install.sh; popd; sed -i -e 's/^TESTING = "1"/TESTING = "0"/' /etc/csf/csf.conf; systemctl restart csf;
