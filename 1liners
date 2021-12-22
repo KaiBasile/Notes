@@ -35,3 +35,9 @@ echo "publickey" >> authorized_keys
 
 #Firewall command to open port 80 for centOS
 firewall-cmd --zone=public --add-service=http
+
+Secure transfer command
+scp -i ~/.ssh/<key> <file> <user>@<IP>:<directory>
+
+Find hostname
+hostname -i
