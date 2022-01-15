@@ -44,3 +44,9 @@ hostname -i
 
 #Install csf on core server
 wget https://download.configserver.com/csf.tgz; tar -xf csf.tgz; pushd csf; ./install.sh; popd; sed -i -e 's/^TESTING = "1"/TESTING = "0"/' /etc/csf/csf.conf; systemctl restart csf;
+
+Disk used human readable
+du -h --max-depth=0
+
+disk free space
+df -h | grep -v tmpfs
